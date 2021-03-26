@@ -1,0 +1,116 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FRI Data Science_report LaTeX Template
+% Version 1.0 (28/1/2020)
+% 
+% Jure Demšar (jure.demsar@fri.uni-lj.si)
+%
+% Based on MicromouseSymp article template by:
+% Mathias Legrand (legrand.mathias@gmail.com) 
+% With extensive modifications by:
+% Antonio Valente (antonio.luis.valente@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[fleqn,moreauthors,10pt]{ds_report}
+\usepackage[english]{babel}
+
+\graphicspath{{fig/}}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+% Header
+\JournalInfo{FRI Natural language processing course 2021}
+
+% Interim or final report
+\Archive{Project report} 
+%\Archive{Final report} 
+
+% Article title
+\PaperTitle{Offensive language exploratory analysis} 
+
+% Authors (student competitors) and their info
+\Authors{Matic Fučka, Anže Alič and Aljaž M. Eržen}
+
+% Advisors
+\affiliation{\textit{Advisors: Slavko Žitnik}}
+
+% Keywords
+\Keywords{Hate speech, NLP}
+\newcommand{\keywordname}{Keywords}
+
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\Abstract{
+In this assignment we analysed the typical structure of hate speech. We used methods ranging from traditional to neural and even some statistical ones.
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% Makes all text pages the same height
+\flushbottom 
+
+% Print the title and abstract box
+\maketitle 
+
+% Removes page numbering from the first page
+\thispagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section*{Introduction}
+
+In this assignment we will try to analyse the structure of typical offensive language. We will tackle this problem with a standard statistical analysis and extend it with a use of traditional natural language processing methods. We will also improve on those with the use of neural approaches. In the end we will also check if we are able to correctly identify offensive language cross domain (different datasets).
+
+
+%------------------------------------------------
+
+\section*{Existing solutions}
+
+Several papers have already addressed hate post analysis and identification. Albadi \textit{et al.} \cite{twitter-arabski} have used different statistical methods, such as $\chi^2$ test to determine the terms with statistically most significant association to one of the hate speech classes. Davidson \textit{et al.} \cite{angleski-traditional} have proposed using n-grams weighted by its TF-IDF and classifying it using logistic regression. Qian \textit{et al.} \cite{reddit} have classified hate speech using several different non-contextual neural approaches. Xiang \textit{et al.} \cite{bert-toxccin} have used BERT model to predict the toxicity of a post and detect the part of the post from which the toxicity stems.
+
+For our exploration we will use several different datasets. The first one was proposed by Mandl \textit{et al.} \cite{HASOC}. It consists of 7005 English posts from Twitter and Facebook. For each post the dataset contains its id, text and three labels. First label categorizes whether the post is hate speech or not. The second label categorizes hate speech posts into subcategories(hate, offensive and profanity). And the last label tells us against whom was the hate speech meant (targeted and untargeted). The dataset is already split into a training and test set. The training set contains 5852 posts, from which 2261 posts are hate speech. The test set contains 1153 posts, from which 288 posts are hate speech.
+
+Another similar dataset was proposed by Founta \textit{et al.} \cite{twitter-dataset}, who collected the data from the dataset. The dataset consists of tweet ids and a label for each tweet. There are 7 different labels: offensive, abusivee, hateful speech, aggressive, cyber-bullying, spam and normal. The impressive thing about this dataset is that it consists of 80 000 tweets.
+
+A broader approach was taken by Ousidhoum \textit{et al.} \cite{mlma-dataset} where they created a dataset of 5647 tweets in French with labels for 5 different aspects: directness (direct/indirect), hostility (abusive, hateful, offensive, disrespectful, fearful and normal), the target (origin, gender, sexual orientation, religion, disability, other), target group (individual, other, women, special needs, African descent) and response from an annotator (disgust, shock, anger, sadness, fear, confusion, indifference).
+
+Rezvan \textit{et al.} \cite{Harassment-dataset32} created annotated corpus usable for research. Dataset has 75000 tweets labelled with different labels such as sexual, racial, appearance-related, intellectual, political and labels for any other types of harassment. Each sample in the dataset was labelled by three different researchers.
+
+Waseem \cite{Waseem2016AreYA}  created a dataset where he classifies tweets into four classes sexist, racist, neither, both. Dataset was annotated by feminist and antiracism activists. It contains 4033 tweets. 
+
+\section*{Initial ideas}
+
+
+We will tackle the problem similarly as we had described them in existing solutions. First we will check different traditional statistical and natural language processing methods, such as $\chi^2$ test, n-grams, to determine the typical structure of hate speech in our datasets, particularly we will check if there are some non-slur words that affect the post heavily to be classified under a specific label. For example we predict that we will find that significant part of hate speech posts will contain political terms, so such tests might have a bias towards it.
+
+Later we will try to gain deeper understanding of it with the use of neural approaches, such as Word2Vec to find some potential synonyms in posts with the same label. In the end we will use Bert to analyse the contextual structure even further and try to find out which specific part of the post indicates most heavily towards a specific label. 
+
+If time will permit us we will also construct different classification models, underlying on our analysis and check their cross dataset performance. For example if both datasets will contain racist posts we will check if a classifier trained on one dataset will correctly predict the post on the other dataset. With these we might even find some bias that was put subconsciously when creating the dataset. 
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+\bibliographystyle{unsrt}
+\bibliography{report}
+
+
+\end{document}

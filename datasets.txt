@@ -1,0 +1,5 @@
+25 - super, dve razlicni anotaciji
+26 - ima samo tweet id in label
+35 - super, ima veliko razlicnih annotacij
+32 - za kontaktrat avtorje, ni objavljen https://github.com/Mrezvan94/Harassment-Corpus
+13 - dva dataseta, oba imata samo tweet id

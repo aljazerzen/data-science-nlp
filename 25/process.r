@@ -6,8 +6,6 @@ df <- rbind(
   fread('hasoc2019_en_test-2919.tsv', sep='\t')
 )
 
-df
-
 summary(df)
 
 names(df) <- c("id", "text", "is_hate", "sentiment", "target")
@@ -20,12 +18,14 @@ levels(df$target)
 
 # df[df$target == "TIN"]
 levels(df$target) <- c("none", "targeted", "untargeted")
-df$target[df$target == "none"] <- NA
+df[target == "none", target := NA]
 
 levels(df$sentiment)
-levels(df$sentiment) <- c(  )
+levels(df$sentiment) <- c("hateful", "none", "offensive", "profanity")
 
-head(df[df$sentiment == "OFFN"]$text)
+head(df[sentiment == "offensive"]$text)
+
+df
 
 df <- df[, c("id", "sentiment", "target", "text")]
 df[, c("source")] <- "25_twitter"

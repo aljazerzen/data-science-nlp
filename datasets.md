@@ -1,18 +1,18 @@
-    25 - super, dve razlicni anotaciji                 : hate offensive profanity
+    *25 - super, dve razlicni anotaciji                : hate offensive profanity
     26 - ima samo tweet id in label
-    20 - super, ima veliko razlicnih annotacij         : abusive disrespectful fearful hateful offensive 
-    32 - za kontaktrat avtorje, ni objavljen
+    *20 - super, ima veliko razlicnih annotacij        : abusive disrespectful fearful hateful offensive 
+    *32 - za kontaktrat avtorje, ni objavljen
     13 - dva dataseta, oba imata samo tweet id         : both    link    neither racism  sexism     
-    15 - misogynistic                                  : stereotype, dominance, derailing, sexual harassment, discredit
+    *15 - misogynistic                                 : stereotype, dominance, derailing, sexual harassment, discredit
     10 - ni s twiterja                                 : hate     idk/skip noHate   relation
     12 - Fox-News, nima labelov
-    kaggle-jigsaw                                      : toxic severe_toxic obscene threat insult identity_hate
+    *kaggle-jigsaw                                     : toxic severe_toxic obscene threat insult identity_hate
     0-cyberbullying                                    : cyberbullying
     http://ub-web.de/research/                         : offensive xenofobic
     wikipedia                                          : 
     14 - samo twiter id                                : benevolent sexist hostile
     16 - super, ima malo cudne hate sub-type           : crimes culture economics generic islamization rapism terrorism women
-    zenodo                                             : misogynistic-slurs opposing-political-views-trump verbal-attacks-on-Reddit ...
+    *zenodo                                            : misogynistic-slurs opposing-political-views-trump verbal-attacks-on-Reddit ...
 
 
 

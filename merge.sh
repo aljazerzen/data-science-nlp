@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "id,sentiment,target,text,source" > dataset.csv
-for i in 25 35
+for i in 25 32 20 16 kaggle-jigsaw
 do
   tail -n +2 $i/processed.csv >> dataset.csv
 done

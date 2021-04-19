@@ -20,6 +20,13 @@ misogynistic <-  df[group == 'women']
 misogynistic[, sentiment := 'misogynistic']
 df <- rbind(df, misogynistic)
 
+# homophobic := group == sexual_orientation
+homophobic <-  df[target == 'sexual_orientation']
+homophobic[, sentiment := 'homophobic']
+df <- rbind(df, homophobic)
+
+df <- df[sentiment != 'normal']
+
 df$tweet <- gsub("\\\\u([a-f]|\\d){4}", "", df$tweet)
 
 df[, sentiment := factor(sentiment)]
@@ -30,13 +37,9 @@ df[, group := factor(group)]
 
 names(df) <- c("id", "text", "directness", "annotator_sentiment", "target", "group", "sentiment")
 
-levels(df$group)
-levels(df$sentiment)
 summary(df)
 
-df[, c(count = .N), by = .(sentiment)]
-
 df <- df[, c("id", "sentiment", "target", "text")]
-df[, c("source")] <- "35_twitter"
+df[, c("source")] <- "20_twitter"
 
 fwrite(df, './processed.csv')

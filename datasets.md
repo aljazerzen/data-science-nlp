@@ -11,9 +11,9 @@
     http://ub-web.de/research/                         : offensive xenofobic
     wikipedia                                          : 
     14 - samo twiter id                                : benevolent sexist hostile
-    16 - super, ima malo cudne hate sub-type           : crimes culture economics generic islamization rapism terrorism women
+    16 - super, ima malo cudne hate sub-type           : political_harassment
     *zenodo                                            : misogynistic-slurs opposing-political-views-trump verbal-attacks-on-Reddit ...
-    vulgartwitter
+    vulgartwitter                                      : vulgar
 
 
 vulgartwitter 

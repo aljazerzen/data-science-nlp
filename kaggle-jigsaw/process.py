@@ -15,4 +15,13 @@ df.loc[:, 'target'] = None
 df = df[['id', 'sentiment', 'target', 'text']]
 
 df.loc[:, 'source'] = 'kaggle-jigsaw'
+
+# drop 99% of 'none' sentiment
+none = df.loc[df['sentiment'] == 'none']
+
+none = none.sample(frac = 0.01, random_state = 0)
+
+df = df.loc[df['sentiment'] != 'none']
+df = pandas.concat([df, none], axis=0)
+
 df.to_csv('processed.csv', index=False)

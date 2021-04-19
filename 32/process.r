@@ -2,11 +2,11 @@
 library(data.table)
 
 df <- rbind(
-  cbind(data.table(sentiment = 'appearance_harresment'), fread('Appearance Data.csv')),
-  cbind(data.table(sentiment = 'intelligence_harresment'), fread('Intelligence Data.csv')),
-  cbind(data.table(sentiment = 'political_harresment'), fread('Political Data.csv')),
+  cbind(data.table(sentiment = 'appearance_harassment'), fread('Appearance Data.csv')),
+  cbind(data.table(sentiment = 'intelligence_harassment'), fread('Intelligence Data.csv')),
+  cbind(data.table(sentiment = 'political_harassment'), fread('Political Data.csv')),
   cbind(data.table(sentiment = 'racist'), fread('Racial Data.csv')),
-  cbind(data.table(sentiment = 'sextual_harresment'), fread('Sextual Data.csv'))
+  cbind(data.table(sentiment = 'sexual_harassment'), fread('Sextual Data.csv'))
 )
 
 df$Decision <- tolower(df$Decision)
@@ -29,4 +29,5 @@ df <- df[, c("id", "sentiment", "target", "text")]
 df[, source := "32_twitter"]
 
 fwrite(df, './processed.csv')
+
 

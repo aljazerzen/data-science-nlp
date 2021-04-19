@@ -15,10 +15,12 @@ df <- melt(df, measure.vars = c('V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8'),
 df[, variable := NULL]
 df <- df[sentiment != ""]
 
-# mysogenistic := group == woman
-mysogenistic <-  df[group == 'women']
-mysogenistic[, sentiment := 'mysogenistic']
-df <- rbind(df, mysogenistic)
+# misogynistic := group == woman
+misogynistic <-  df[group == 'women']
+misogynistic[, sentiment := 'misogynistic']
+df <- rbind(df, misogynistic)
+
+df$tweet <- gsub("\\\\u([a-f]|\\d){4}", "", df$tweet)
 
 df[, sentiment := factor(sentiment)]
 df[, directness := factor(directness)]

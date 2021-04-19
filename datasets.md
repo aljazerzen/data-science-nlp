@@ -13,8 +13,13 @@
     14 - samo twiter id                                : benevolent sexist hostile
     16 - super, ima malo cudne hate sub-type           : crimes culture economics generic islamization rapism terrorism women
     *zenodo                                            : misogynistic-slurs opposing-political-views-trump verbal-attacks-on-Reddit ...
+    vulgartwitter
 
 
+vulgartwitter 
+------------
+
+https://github.com/ericholgate/vulgartwitter
 
 dataset 32
 ------------

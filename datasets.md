@@ -3,7 +3,7 @@
     *20 - super, ima veliko razlicnih annotacij        : abusive disrespectful fearful hateful offensive 
     *32 - za kontaktrat avtorje, ni objavljen
     13 - dva dataseta, oba imata samo tweet id         : both    link    neither racism  sexism     
-    *15 - misogynistic                                 : stereotype, dominance, derailing, sexual harassment, discredit
+    15 - misogynistic - ima zaklenjen Drive            : stereotype, dominance, derailing, sexual harassment, discredit
     10 - ni s twiterja                                 : hate     idk/skip noHate   relation
     12 - Fox-News, nima labelov
     *kaggle-jigsaw                                     : toxic severe_toxic obscene threat insult identity_hate
@@ -11,9 +11,9 @@
     http://ub-web.de/research/                         : offensive xenofobic
     wikipedia                                          : 
     14 - samo twiter id                                : benevolent sexist hostile
-    16 - super, ima malo cudne hate sub-type           : political_harassment
+    *16 - super, ima malo cudne hate sub-type          : political_harassment
     *zenodo                                            : misogynistic-slurs opposing-political-views-trump verbal-attacks-on-Reddit ...
-    vulgartwitter                                      : vulgar
+    *vulgartwitter                                     : vulgar
 
 
 vulgartwitter 

@@ -8,6 +8,9 @@ df = pandas.melt(df,
   var_name='sentiment'
 )
 
+# replace 'severe_toxic' with 'toxic'
+df.loc[df['sentiment'] == 'severe_toxic', 'sentiment'] = 'toxic'
+
 df.loc[df['value'] == 0, 'sentiment'] = 'none'
 
 df.rename(columns = { 'comment_text': 'text' }, inplace=True)

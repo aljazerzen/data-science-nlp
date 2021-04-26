@@ -1,4 +1,5 @@
 library(data.table)
+options(width = 300)
 
 df <- fread('dataset.csv')
 
@@ -13,5 +14,11 @@ df[sentiment == 'normal', .N, by = .(source)]
 df[, .N, by = .(sentiment)]
 df[, .N, by = .(sentiment, source)]
 df[, .N, by = .(sentiment, source)][, .N, by = sentiment]
+df[, .N, by = .(source)]
+df[, .N]
 
-saveRDS(df, 'dataset.RDS')
+df[sentiment == 'normal', .N, by = .(source)]
+
+sentiment_source <- dcast(df, sentiment ~ source)
+library(xtable)
+xtable(sentiment_source, type = "latex")

@@ -24,3 +24,7 @@ TODO Aljaz dodej kako se ta R pozene
 
 Use notebook `baseline_tfidf.ipynb` to reproduce results from TF-IDF, Word2Vec and FastText.
 After running this notebook you can extract similar words using FastText by running `Offensive words exploration.ipynb`. 
+
+### Statistical analysis, N-Grams, FastText, Word2Vec and Inter label analysis
+
+Use notebook `Statistical_Methods.ipynb` to reproduce results from statistical analysis, N-Grams, FastText, Word2Vec and Inter label analysis.

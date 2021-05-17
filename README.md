@@ -14,12 +14,31 @@ The dataset used for analysis is in `dataset.zip`. Unzip it to the root director
 ## Run scripts
 
 ### Python
+
 All python notebooks can be run using jupyter-lab. Run the following commands after setting up the environment.
-`conda activate myenv`
-`jupyter-lab`
+
+```
+$ conda activate myenv
+$ jupyter-lab
+```
 
 ### R
-TODO Aljaz dodej kako se ta R pozene
+
+To preprocess each of the datasets into a merged corpus, we wrote a few R scripts utilizing suspiciously fast library `data.table`.
+
+To preprocess datasets and merge them:
+1. install R packages `data.table` and `stringr` (may require super user privileges)
+    
+        $ R -e "install.packages('data.table', 'stringr')"
+      
+2. cd into each of the dataset's directories and run `process.r`
+
+        $ cd datasets/20; R < process.r
+
+3. run to merge each of the precessed datasets into one file
+
+        $ cd datasets; sh merge.sh
+
 ### TF-IDF, Word2Vec, FastText
 
 Use notebook `baseline_tfidf.ipynb` to reproduce results from TF-IDF, Word2Vec and FastText.

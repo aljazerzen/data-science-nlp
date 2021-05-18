@@ -47,3 +47,9 @@ After running this notebook you can extract similar words using FastText by runn
 ### Statistical analysis, N-Grams, FastText, Word2Vec and Inter label analysis
 
 Use notebook `Statistical_Methods.ipynb` to reproduce results from statistical analysis, N-Grams, FastText, Word2Vec and Inter label analysis.
+
+### BERT & ELMo embeddings
+
+Work on this area may be harder to reproduce due to hardware requirements. Dependencies (like TensorFlow) are installed from within the notebooks.
+
+Notebooks `bert/BERT ours.ipynb` and `elmo/ELMo.ipybn` were developed on Google Colab. Brief outline of the work is within corresponding `results.md` files.

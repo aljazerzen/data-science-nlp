@@ -39,3 +39,7 @@ Naredil sem prediction na test subsetu in tole so rezultati z PCA:
 In z tSNE:
 
 ![](./images/bert_sent_embed_tsne.png)
+
+In z LDA (ni najbolje, ker sem za teniranje LDA uporabil label-e iz test subseta):
+
+![](./images/bert_sent_embed_lda.png)

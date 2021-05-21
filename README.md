@@ -22,23 +22,6 @@ $ conda activate nlp2
 $ jupyter-lab
 ```
 
-### R
-
-To preprocess each of the datasets into a merged corpus, we wrote a few R scripts utilizing suspiciously fast library `data.table`.
-
-To preprocess datasets and merge them:
-1. install R packages `data.table` and `stringr` (may require super user privileges)
-    
-        $ R -e "install.packages('data.table', 'stringr')"
-      
-2. cd into each of the dataset's directories and run `process.r`
-
-        $ cd datasets/20; R < process.r
-
-3. run to merge each of the precessed datasets into one file
-
-        $ cd datasets; sh merge.sh
-
 ### TF-IDF, Word2Vec, FastText
 
 Use notebook `baseline_tfidf.ipynb` to reproduce results from TF-IDF, Word2Vec and FastText.
@@ -52,4 +35,45 @@ Use notebook `Statistical_Methods.ipynb` to reproduce results from statistical a
 
 Work on this area may be harder to reproduce due to hardware requirements. Dependencies (like TensorFlow) are installed from within the notebooks.
 
-Notebooks `bert/BERT ours.ipynb` and `elmo/ELMo.ipybn` were developed on Google Colab. Brief outline of the work is within corresponding `results.md` files.
+Notebooks `BERT.ipynb` and `ELMo.ipybn` were developed on Google Colab. Brief outline of the work is within corresponding `results.md` files.
+
+## Corpus merging
+### Sources
+
+We based selection of out datasets on the website [https://hatespeechdata.com/](https://hatespeechdata.com/). 
+
+We considered following datasets (dataset numbers relate to index on the website):
+- *25 - great two different labels
+- *20 - great many different labels
+- *32 - not published, we contacted authors
+- *16 - great, has weird hate sub-types
+- *zenodo https://zenodo.figshare.com/articles/dataset/Hybrid_Approaches_to_Detect_Comments_Violating_Macro_Norms_on_Reddit/7598930/1
+- *vulgartwitter https://github.com/ericholgate/vulgartwitter
+- *kaggle-jigsaw https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data
+- cyberbullying
+- 26 - just Twitter id and label
+- 13 - two dataset, both have only Tweet id
+- 15 - misogynistic - behind a locked Google Drive
+- 10 - it's not from Twitter
+- 12 - Fox-News, no labels
+- 14 - just Twitter id
+
+Datasets marked with (*) were chosen to be included in our merged corpus.
+
+### R scripts
+
+To preprocess each of the datasets into a merged corpus, we wrote a few R scripts utilizing suspiciously fast library `data.table`.
+
+To preprocess datasets and merge them:
+1. install R packages `data.table` and `stringr` (may require super user privileges)
+
+        R> install.packages('data.table', 'stringr')
+
+2. cd into each of the dataset's directories and run `process.r`
+
+        $ cd datasets/20; R < process.r
+
+3. run to merge each of the precessed datasets into one file
+
+        $ cd datasets; sh merge.sh
+
